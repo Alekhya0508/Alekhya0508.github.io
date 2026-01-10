@@ -1,0 +1,13 @@
+#k{
+    background-color:blue;
+    color:white;
+    border-radius: 10px;
+}
+#l{
+    background-color: green;
+    color:white;
+    border-radius: 5px;
+    border-color: black;
+    border-width: 5px;
+    border-style: dashed;
+}
