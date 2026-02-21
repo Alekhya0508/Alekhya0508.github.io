@@ -1,16 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body onload="showLoginForm()">
-    <h1>Web App 1</h1>
-    <div id="root">
-      
+<html>
+<head>
+    <title>Login & Signup</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4e73df, #6f42c1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2e59d9;
+        }
+
+        .toggle {
+            text-align: center;
+            margin-top: 10px;
+            cursor: pointer;
+            color: #4e73df;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- Login Form -->
+    <div id="login" class="form active">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button>Login</button>
+        <div class="toggle" onclick="showSignup()">Don't have account? Sign Up</div>
     </div>
-  </body>
+
+    <!-- Signup Form -->
+    <div id="signup" class="form">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button>Sign Up</button>
+        <div class="toggle" onclick="showLogin()">Already have account? Login</div>
+    </div>
+
+</div>
+
+<script>
+    function showSignup() {
+        document.getElementById("login").classList.remove("active");
+        document.getElementById("signup").classList.add("active");
+    }
+
+    function showLogin() {
+        document.getElementById("signup").classList.remove("active");
+        document.getElementById("login").classList.add("active");
+    }
+</script>
+
+</body>
 </html>
